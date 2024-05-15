@@ -1,0 +1,53 @@
+<informacion_tarjeta>
+    <sistemas>
+        <sistema>
+            <nombre>SISTEMA TRANSACCIONAL1</nombre>
+            <localizacion>Guatemala</localizacion>
+        </sistema>
+        <sistema>
+            <nombre>SISTEMA TRANSACCIONAL2</nombre>
+            <localizacion>El salvador</localizacion>
+        </sistema>
+		 <sistema>
+            <nombre>SISTEMA TRANSACCIONAL3</nombre>
+            <localizacion>El Honduras</localizacion>
+        </sistema>
+    </sistemas>
+    <tarjetas>
+        <tarjeta>
+            <ID>1234 5678 9012 3456</ID>
+            <tipo>VISA</tipo>
+            <fecha_expiracion>12/24</fecha_expiracion>
+            <cvv>123</cvv>
+        </tarjeta>
+        <tarjeta>
+            <ID>5555 5678 902212 3456</ID>
+            <tipo>VISA</tipo>
+            <fecha_expiracion>12/28</fecha_expiracion>
+            <cvv>236</cvv>
+        </tarjeta>
+		<tarjeta>
+            <ID>2222 5678 45455 222</ID>
+            <tipo>VISA</tipo>
+            <fecha_expiracion>12/25</fecha_expiracion>
+            <cvv>1246</cvv>
+        </tarjeta>
+    </tarjetas>
+    <clientes>
+        <cliente>
+            <id_cliente>48756355</id_cliente>
+            <nombre>Oscar Machan</nombre>
+            <correo>oscar.machan@gmail.com</correo>
+        </cliente>
+        <cliente>
+            <id_cliente>1245876</id_cliente>
+            <nombre>Oscar Erick Arnolfo</nombre>
+            <correo>erickarnulfu@gmail.com</correo>
+        </cliente>
+		<cliente>
+            <id_cliente>9856751</id_cliente>
+            <nombre>Mauricio Bonilla Morales</nombre>
+            <correo>mauriciobonilla@gmail.com</correo>
+        </cliente>
+    </clientes>
+</informacion_tarjeta>

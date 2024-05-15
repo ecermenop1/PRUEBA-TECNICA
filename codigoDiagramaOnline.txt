@@ -1,0 +1,86 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table TB_ARTICULO {
+  CODIGO_ARTICULO integer [primary key]
+  CODIGO_SUCURSAL integer  [primary key]
+  CODIGO_TIPO integer
+  CODIGO_SUBTIPO integer
+  NOMBRE_ARTICULO VARCHAR(50)
+  PRECIO_ARTICULO decimal
+  CODIGO_PROMOCION integer
+  
+}
+
+Table TB_TIPO {
+  CODIGO_TIPO integer [primary key]
+   CODIGO_SUCURSAL integer  [primary key]
+  NOMBRE varchar(20)
+  DESCRIPCION varchar(20)
+}
+
+Table TB_SUBTIPO {
+  CODIGO_SUBTIPO integer [primary key]
+   CODIGO_SUCURSAL integer  [primary key]
+  NOMBRE varchar(50)
+  DESCRIPCION varchar(50)
+}
+
+
+Table TB_SUCURSAL {
+  CODIGO_SUCURSAL integer [primary key]
+  DESCRIPCION varchar(50)
+  DIRECCION varchar(50)
+}
+
+Table TB_INGRESO_ARTICULO{
+ID_INGRESO integer [primary key]
+CODIGO_ARTICULO integer
+CODIGO_SUCURSAL integer
+CANTIDAD integer
+}
+
+Table TB_EGRESO_ARTICULO{
+ID_EGRESO integer [primary key]
+CODIGO_ARTICULO integer
+CODIGO_SUCURSAL integer
+CANTIDAD integer
+}
+
+
+Table TB_PROMOCION{
+CODIGO_PROMOCION integer [primary key]
+CODIGO_SUCURSAL integer [primary key]
+NOMBRE_PROMOCION integer  
+FECHA_INICIO timestamp
+FECHA_FIN timestamp
+}
+
+
+Table TB_ENCAJE{
+CODIGO_ENCAJE integer [primary key]
+CODIGO_ARTICULO integer
+CANTIDAD_CANJEADA decimal
+CODIGO_PROMOCION integer
+CODIGO_SUCURSAL integer
+OBSERVACIONES varchar
+}
+
+
+Ref: "TB_ARTICULO"."CODIGO_TIPO" < "TB_TIPO"."CODIGO_TIPO"
+
+
+
+Ref: "TB_ARTICULO"."CODIGO_SUBTIPO" > "TB_SUBTIPO"."CODIGO_SUBTIPO"
+
+Ref: "TB_SUCURSAL"."CODIGO_SUCURSAL" < "TB_ARTICULO"."CODIGO_SUCURSAL"
+
+Ref: "TB_INGRESO_ARTICULO"."CODIGO_ARTICULO" < "TB_ARTICULO"."CODIGO_ARTICULO"
+
+Ref: "TB_EGRESO_ARTICULO"."CODIGO_ARTICULO" < "TB_ARTICULO"."CODIGO_ARTICULO"
+
+
+
+Ref: "TB_PROMOCION"."CODIGO_PROMOCION" < "TB_ARTICULO"."CODIGO_PROMOCION"
+
+Ref: "TB_ARTICULO"."CODIGO_ARTICULO" < "TB_ENCAJE"."CODIGO_ARTICULO"
